@@ -156,7 +156,7 @@ footer {
     border-top: 1px solid #0a111a;
 }
 
-/* Classes de Animação */
+/* Classes dee Animação */
 .fade-in {
     opacity: 0;
     animation: fadeInAnim 3s forwards;
