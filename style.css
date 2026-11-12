@@ -1,0 +1,172 @@
+/* Reset e Variáveis Sombrias */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo-profundo: #05090f;
+    --texto-base: #a3b1c6;
+    --titulo-claro: #d1d8e0;
+    --detalhe-sangue: #4a1515;
+    --fundo-card: #0a111a;
+}
+
+body {
+    background-color: var(--fundo-profundo);
+    color: var(--texto-base);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Tipografia */
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--titulo-claro);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* Névoa de Fundo Animada */
+.overlay-nevoa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, transparent 0%, #05090f 100%);
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.8;
+}
+
+/* Cabeçalho */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #03060a 0%, var(--fundo-profundo) 100%);
+    border-bottom: 1px solid #111a26;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-style: italic;
+    max-width: 600px;
+    opacity: 0.8;
+}
+
+/* Seções Principais */
+.content-section {
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #1a2533;
+    padding-bottom: 1rem;
+}
+
+.content-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Galeria Macabra */
+.grid-imagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card-imagem {
+    background-color: var(--fundo-card);
+    border: 1px solid #1a2533;
+    transition: all 0.4s ease;
+}
+
+.card-imagem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    border-color: #2a3a4d;
+}
+
+.placeholder-img {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #030508;
+    color: #445469;
+    font-family: monospace;
+    font-size: 0.9rem;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #1a2533;
+}
+
+.legenda {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Conto */
+.texto-conto {
+    background: #080c12;
+    padding: 3rem;
+    border-left: 2px solid var(--detalhe-sangue);
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 3rem;
+    font-size: 0.9rem;
+    color: #445469;
+    background-color: #030508;
+    border-top: 1px solid #0a111a;
+}
+
+/* Classes de Animação */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnim 3s forwards;
+}
+
+.fade-in.delay {
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeInAnim {
+    to { opacity: 1; }
+}
+
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
