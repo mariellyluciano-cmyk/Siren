@@ -98,12 +98,22 @@ h1, h2, h3 {
     background-color: var(--fundo-card);
     border: 1px solid #1a2533;
     transition: all 0.4s ease;
+    overflow: hidden; /* ADICIONADO: Impede que a imagem passe das bordas do card */
 }
 
 .card-imagem:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
     border-color: #2a3a4d;
+}
+
+/* ADICIONADO: Classe que limita o tamanho da imagem real */
+.imagem-real {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem ser espremida */
+    display: block;
+    border-bottom: 1px solid #1a2533;
 }
 
 .placeholder-img {
